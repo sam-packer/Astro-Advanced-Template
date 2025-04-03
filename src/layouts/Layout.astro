@@ -1,0 +1,40 @@
+---
+import Footer from "../components/Footer.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Navbar from '../components/Navbar.astro'
+
+import {ClientRouter} from "astro:transitions";
+
+import "../styles/global.css";
+
+const {title, description, image, type} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- The head links are in a separate component to reduce clutter.
+    Please don't worry about changing anything there. A lot of the data is so
+    social media sites can generate rich previews of your website -->
+    <BaseHead title={title} description={description} image={image} type={type}/>
+
+    <!-- Site title -->
+    <title>{title}</title>
+
+    <!-- View transitions, smooth fading between pages -->
+    <ClientRouter/>
+</head>
+
+<body class="flex flex-col min-h-screen">
+<Navbar/>
+
+<main class="flex-1">
+    <div class="max-w-6xl mx-auto px-4 my-20">
+        <slot/>
+    </div>
+</main>
+
+<Footer/>
+</body>
+</html>

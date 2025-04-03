@@ -1,0 +1,43 @@
+---
+const {post, href, target = "_self"} = Astro.props;
+import {Image} from "astro:assets";
+---
+
+<div class="card card-border rounded-xl bg-base-200 border-base-300 clickable">
+    <a href={href} target={target} aria-label={post.data.title}>
+        <div class="hero-content flex-col md:flex-row">
+            {
+                post.data.image && (
+                            <Image
+                                    src={post.data.image}
+                                    width={750}
+                                    height={422}
+                                    format="webp"
+                                    loading="eager"
+                                    decoding="async"
+                                    alt={post.data.title}
+                                    class="max-w-full md:max-w-[13rem] rounded-lg"
+                            />
+                )
+            }
+            <div class="grow w-full">
+                <h1 class="text-xl font-bold">
+                    {post.data.title}
+                    {post.data.badge &&
+                            <div class="badge badge-secondary mx-2">{post.data.badge}</div>}
+                </h1>
+                <p class="py-1 text-1xl">{post.data.description}</p>
+                <div class="card-actions justify-end">
+                    {
+                        post.data.tags &&
+                        post.data.tags.map((tag) => (
+                                <p class="badge border-current/80 text-base-content/80" aria-label={`Tag ${tag}`}>
+                                    {tag}
+                                </p>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
