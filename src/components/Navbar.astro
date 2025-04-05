@@ -1,4 +1,9 @@
-<nav class="w-full flex justify-center py-4">
+---
+// Make sure you update the links in both the desktop and mobile navbar
+---
+
+<!-- Desktop Navbar -->
+<nav class="w-full hidden md:flex justify-center py-4">
     <div class="bg-base-200 rounded-full shadow-md px-6">
         <ul class="flex space-x-2">
             <li><a href="/" class="nav-item">Home</a></li>
@@ -6,5 +11,35 @@
             <li><a href="/projects" class="nav-item">Projects</a></li>
             <li><a href="/blog" class="nav-item">Blog</a></li>
         </ul>
+    </div>
+</nav>
+
+<!-- Mobile navbar -->
+<nav class="md:hidden w-full px-4 py-2 bg-base-200 shadow-md">
+    <div class="flex items-center justify-between relative">
+
+        <!-- Hamburger on the left -->
+        <div class="dropdown">
+            <label tabindex="0" class="btn btn-ghost btn-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </label>
+
+            <!-- Dropdown menu -->
+            <ul tabindex="0" class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-64">
+                <li><a href="/">Home</a></li>
+                <li><a href="/experience">Experience</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </div>
+
+        <!-- Centered Name -->
+        <div class="absolute left-1/2 transform -translate-x-1/2">
+            <a href="/" class="text-lg font-semibold">[Your Name]</a>
+        </div>
     </div>
 </nav>
