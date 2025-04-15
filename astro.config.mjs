@@ -8,7 +8,6 @@ export default defineConfig({
     // Replace this with your domain
     // Make sure you change the URL in the /public/robots.txt file as well!
     site: "https://astro-advanced.sampacker.com",
-    trailingSlash: 'never',
     vite: {
         plugins: [tailwindcss()],
     },
