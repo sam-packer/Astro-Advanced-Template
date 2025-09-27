@@ -9,15 +9,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.3.1",
-    "@tailwindcss/vite": "^4.1.5",
-    "astro": "^5.7.10",
-    "dayjs": "^1.11.13",
-    "sharp": "^0.34.1",
-    "tailwindcss": "^4.1.5"
+    "@astrojs/sitemap": "^3.6.0",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.14.1",
+    "dayjs": "^1.11.18",
+    "sharp": "^0.34.4",
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16",
-    "daisyui": "^5.0.35"
+    "@tailwindcss/typography": "^0.5.19",
+    "daisyui": "^5.1.24"
   }
 }

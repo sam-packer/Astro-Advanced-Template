@@ -1,24 +1,28 @@
 ---
-// Make sure you update the links in both the desktop and mobile navbar
+const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Experience", href: "/experience" },
+    { name: "Projects", href: "/projects" },
+    { name: "Blog", href: "/blog" },
+];
 ---
 
 <!-- Desktop Navbar -->
 <nav class="w-full hidden md:flex justify-center py-4">
     <div class="bg-base-200 rounded-full shadow-md px-6">
         <ul class="flex space-x-2">
-            <li><a href="/" class="nav-item">Home</a></li>
-            <li><a href="/experience" class="nav-item">Experience</a></li>
-            <li><a href="/projects" class="nav-item">Projects</a></li>
-            <li><a href="/blog" class="nav-item">Blog</a></li>
+            {navLinks.map(link => (
+                    <li><a href={link.href} class="nav-item">{link.name}</a></li>
+            ))}
         </ul>
     </div>
 </nav>
 
-<!-- Mobile navbar -->
+<!-- Mobile Navbar -->
 <nav class="md:hidden w-full px-4 py-2 bg-base-200 shadow-md">
     <div class="flex items-center justify-between relative">
 
-        <!-- Hamburger on the left -->
+        <!-- Hamburger -->
         <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost btn-circle">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -30,10 +34,9 @@
 
             <!-- Dropdown menu -->
             <ul tabindex="0" class="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-64">
-                <li><a href="/">Home</a></li>
-                <li><a href="/experience">Experience</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/blog">Blog</a></li>
+                {navLinks.map(link => (
+                        <li><a href={link.href}>{link.name}</a></li>
+                ))}
             </ul>
         </div>
 
